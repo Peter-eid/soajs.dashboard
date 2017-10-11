@@ -1547,7 +1547,14 @@ module.exports = {
                     "validation": {
                         "type": "string", "required": true
                     }
-                }
+                },
+	            "es_dbName": {
+		            "source": ['query.es_dbName'],
+		            "required": false,
+		            "validation": {
+			            "type": "string"
+		            }
+	            }
             },
 
             "/analytics/deactivateAnalytics": {
