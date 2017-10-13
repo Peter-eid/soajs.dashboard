@@ -1536,27 +1536,6 @@ module.exports = {
                 }
             },
 
-            "/analytics/activateAnalytics": {
-                _apiInfo: {
-                    "l": "Activate Analytics",
-                    "group": "elk"
-                },
-                "env": {
-                    "source": ['query.env'],
-                    "required": true,
-                    "validation": {
-                        "type": "string", "required": true
-                    }
-                },
-	            "es_dbName": {
-		            "source": ['query.es_dbName'],
-		            "required": false,
-		            "validation": {
-			            "type": "string"
-		            }
-	            }
-            },
-
             "/analytics/deactivateAnalytics": {
                 _apiInfo: {
                     "l": "Deactivate Analytics",
@@ -2607,6 +2586,39 @@ module.exports = {
                     }
                 }
             },
+	
+	        "/analytics/activateAnalytics": {
+		        _apiInfo: {
+			        "l": "Activate Analytics",
+			        "group": "elk"
+		        },
+		        "env": {
+			        "source": ['query.env'],
+			        "required": true,
+			        "validation": {
+				        "type": "string", "required": true
+			        }
+		        },
+		        "es_dbName": {
+			        "source": ['query.es_dbName'],
+			        "required": false,
+			        "validation": {
+				        "type": "string"
+			        }
+		        },
+		        "credentials": {
+			        "source": ['body.credentials'],
+			        "required": false,
+			        "validation": {
+				        "type": "object",
+				        "properties": {
+					        "username": {"type": "string", "required": true},
+					        "password": {"type": "string", "required": true}
+				        }
+			        },
+			
+		        }
+	        },
 
             "/swagger/simulate": {
                 "_apiInfo": {

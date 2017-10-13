@@ -2414,7 +2414,7 @@ service.init(function () {
 	 * @param {String} API route
 	 * @param {Function} API middleware
 	 */
-	service.get("/analytics/activateAnalytics", function (req, res) {
+	service.post("/analytics/activateAnalytics", function (req, res) {
 		initBLModel(req, res, dashboardBL.analytics.module, dbModel, function (BL) {
 			BL.activateAnalytics(config, req, res, function (error, data) {
 				return res.json(req.soajs.buildResponse(error, data));
