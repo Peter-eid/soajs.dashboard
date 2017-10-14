@@ -2407,6 +2407,20 @@ service.init(function () {
 			});
 		});
 	});
+	
+	/**
+	 * Analytics:
+	 * Api that updates elasticSearch security settings of current Analytics in all environments
+	 * @param {String} API route
+	 * @param {Function} API middleware
+	 */
+	service.put("/analytics/updateSecuritySettings", function (req, res) {
+		initBLModel(req, res, dashboardBL.analytics.module, dbModel, function (BL) {
+			BL.updateSecuritySettings(config, req, res, function (error, data) {
+				return res.json(req.soajs.buildResponse(error, data));
+			});
+		});
+	});
 
 	/**
 	 * Analytics:

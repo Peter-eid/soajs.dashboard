@@ -266,6 +266,7 @@ var errors = {
 	"956": "Authentication failed. The deploy token provided is not valid.",
 
 	"960": "Elasticsearch analytics cluster not found, resetting configuration. Please try deploying Analytics again.",
+	"961": "Duplicate username detected in ElasticSearch Security, Please use unique Username for each user.",
 
 	"967": "Continuous Integration recipe name already exists for this provider.",
 	"968": "This Account already has a Continuous Integration configured with the selected provider.",

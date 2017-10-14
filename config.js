@@ -3971,7 +3971,51 @@ module.exports = {
                         "type": "string"
                     }
                 }
-            }
+            },
+		
+		    "/analytics/updateSecuritySettings": {
+			    _apiInfo: {
+				    "l": "Update Analytics Security Settings",
+				    "group": "elk"
+			    },
+			    "es_security": {
+				    "source": ["body.es_security"],
+				    "required": false,
+				    "validation": {
+					    "type": "object",
+					    "properties": {
+						    "rw": {
+							    "type": "object",
+							    "required": true,
+							    "properties": {
+								    "username": {"type":"string", "required": true},
+								    "password": {"type":"string", "required": true}
+							    },
+							    "additionalProperties": false
+						    },
+						    "ro": {
+							    "type": "object",
+							    "required": false,
+							    "properties": {
+								    "username": {"type":"string", "required": true},
+								    "password": {"type":"string", "required": true}
+							    },
+							    "additionalProperties": false
+						    },
+						    "owner": {
+							    "type": "object",
+							    "required": false,
+							    "properties": {
+								    "username": {"type":"string", "required": true},
+								    "password": {"type":"string", "required": true}
+							    },
+							    "additionalProperties": false
+						    }
+					    },
+					    "additionalProperties": false
+				    }
+			    }
+		    }
         },
 
         "delete": {
