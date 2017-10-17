@@ -656,6 +656,27 @@ module.exports = {
 					}
 				}
 			},
+	        
+	        "/resources/listDatabases": {
+				_apiInfo: {
+                    "l": "List databases of a specific resource category and type",
+                    "group": "Resources"
+                },
+				"env": {
+					"source": ['query.env'],
+					"required": true,
+					"validation": {
+						"type": "string"
+					}
+				},
+		        "category":{
+			        "source": ['query.category'],
+			        "required": false,
+			        "validation": {
+				        "type": "string"
+			        }
+		        }
+			},
 
             "/resources/get": {
 				_apiInfo: {

@@ -269,6 +269,19 @@ service.init(function () {
 			});
 		});
 	});
+	
+	/**
+	 * List all databases of a specific resource category of type cluster
+	 * @param {String} API route
+	 * @param {Function} API middleware
+	 */
+	service.get("/resources/listDatabases", function (req, res) {
+		initBLModel(req, res, dashboardBL.resources.module, dbModel, function (BL) {
+			BL.listResourcesDatabases(config, req, res, function (error, data) {
+				return res.json(req.soajs.buildResponse(error, data));
+			});
+		});
+	});
 
 	/**
 	 * Get one resource
